@@ -1,0 +1,20 @@
+
+{% extends 'music/base.html' %}
+
+{% block body%}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+                <h2>{{artist1.name}}</h2>
+                <h3>{{artist1.music_type}}</h3>
+                
+                        
+                <ul>    
+                    {% for ab in albums %}
+                     <li><a href="{% url 'music:details' ab.id %}"> {{ab.album_title}} </a></li>
+                    {% endfor %}
+                </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
